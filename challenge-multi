@@ -1,0 +1,35 @@
+//Déclaration et Initialisation du Tableau Uniforme (3x3)
+
+int[,] uniform = {
+    {1, 2, 3},
+    {2, 3, 4},
+    {3, 4, 5}
+};
+
+//Déclaration du Tableau Irrégulier (3xn)
+
+int[][] irrégulier = new int[3][];
+
+//Remplissage du Tableau Irrégulier
+for (int i = 0; i < uniform.GetLength(0); i++)
+{
+    int length = uniform.GetLength(1) - i; 
+    irrégulier[i] = new int[length]; 
+
+    for (int j = 0; j < length; j++)
+    {
+        irrégulier[i][j] = uniform[i, j]; 
+    }
+}
+
+//Affichage du Tableau Irrégulier
+Console.WriteLine("irrégulier Array:");
+for (int i = 0; i < irrégulier.Length; i++)
+{
+    for (int j = 0; j < irrégulier[i].Length; j++)
+    {
+        Console.Write(irrégulier[i][j] + " ");
+    }
+    Console.WriteLine();
+}
+
